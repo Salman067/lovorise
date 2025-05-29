@@ -1,4 +1,6 @@
--- Insert sample users
+-- Insert sample users--
+
+
 INSERT INTO users (id, name, email, gender, hearts, country, avatar, is_active, is_premium, joined_date, last_active, created_at, updated_at) VALUES
 ('usr_001', 'Alice Johnson', 'alice@example.com', 'female', 1250, 'United States', 'https://example.com/avatars/alice.jpg', true, true, NOW() - INTERVAL '6 months', NOW() - INTERVAL '2 hours', NOW(), NOW()),
 ('usr_002', 'Bob Smith', 'bob@example.com', 'male', 890, 'United Kingdom', 'https://example.com/avatars/bob.jpg', true, false, NOW() - INTERVAL '4 months', NOW() - INTERVAL '1 hour', NOW(), NOW()),
@@ -11,7 +13,9 @@ INSERT INTO users (id, name, email, gender, hearts, country, avatar, is_active, 
 ('usr_009', 'Ivy Chen', 'ivy@example.com', 'female', 1050, 'Singapore', 'https://example.com/avatars/ivy.jpg', true, true, NOW() - INTERVAL '9 months', NOW() - INTERVAL '2 hours', NOW(), NOW()),
 ('usr_010', 'Jack Anderson', 'jack@example.com', 'male', 920, 'Netherlands', 'https://example.com/avatars/jack.jpg', true, false, NOW() - INTERVAL '6 months', NOW() - INTERVAL '1 hour', NOW(), NOW());
 
--- Insert sample revenue data
+-- Insert sample revenue data---
+
+
 INSERT INTO revenues (amount, type, user_id, date, created_at, updated_at) VALUES
 (9.99, 'subscription', 'usr_001', NOW() - INTERVAL '1 day', NOW(), NOW()),
 (4.99, 'in-app-purchase', 'usr_002', NOW() - INTERVAL '2 days', NOW(), NOW()),
@@ -26,7 +30,9 @@ INSERT INTO revenues (amount, type, user_id, date, created_at, updated_at) VALUE
 (9.99, 'subscription', 'usr_003', NOW() - INTERVAL '1 month', NOW(), NOW()),
 (4.99, 'in-app-purchase', 'usr_005', NOW() - INTERVAL '1 month', NOW(), NOW());
 
--- Insert sample engagement data
+-- Insert sample engagement data---
+
+
 INSERT INTO engagements (module, usage_count, engagement_score, date, created_at, updated_at) VALUES
 ('Swipes', 15420, 8.5, NOW() - INTERVAL '1 day', NOW(), NOW()),
 ('Events', 9870, 7.2, NOW() - INTERVAL '1 day', NOW(), NOW()),
@@ -39,7 +45,9 @@ INSERT INTO engagements (module, usage_count, engagement_score, date, created_at
 ('Chat', 6200, 8.6, NOW() - INTERVAL '2 days', NOW(), NOW()),
 ('Others', 3100, 6.2, NOW() - INTERVAL '2 days', NOW(), NOW());
 
--- Insert sample user activities
+-- Insert sample user activities---
+
+
 INSERT INTO user_activities (user_id, activity_type, module, score, timestamp) VALUES
 ('usr_001', 'swipe', 'Swipes', 5, NOW() - INTERVAL '1 hour'),
 ('usr_001', 'message', 'Chat', 3, NOW() - INTERVAL '2 hours'),
