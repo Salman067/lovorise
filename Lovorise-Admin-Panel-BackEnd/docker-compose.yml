@@ -1,0 +1,43 @@
+version: '3.7'
+
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    hostname: localhost
+    restart: always
+    env_file:
+      - app.env
+    ports:
+      - "54324:54324"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: salman
+      POSTGRES_PASSWORD: salman
+      POSTGRES_DB: lovorise
+    networks:
+      - backend
+
+  api_server:
+    build: 
+      context: .
+    container_name: lovorise-admin-panel-backend
+    restart: on-failure:5
+    ports:
+      - "4000:4000"
+    env_file:
+      - app.env
+    depends_on:
+      - postgres
+    networks:
+      - backend
+    links:
+      - postgres
+
+networks:
+  backend:
+    driver: bridge
+
+volumes:
+  postgres_data:
